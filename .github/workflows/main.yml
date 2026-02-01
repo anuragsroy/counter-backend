@@ -22,7 +22,7 @@ jobs:
           java-version: "17"
           
 
-      - run: apt-get update && apt-get install -y maven
+      - run: sudo apt-get update && sudo apt-get install -y maven
       - run: mvn clean install
       - run: mvn package
       - run: mvn compile
