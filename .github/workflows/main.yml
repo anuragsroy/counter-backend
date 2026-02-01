@@ -1,0 +1,27 @@
+name: backend-counter
+
+on:
+  push:
+    branches:
+      main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+  
+    steps:
+      
+      - uses: actions/checkout@v2
+
+      
+      - uses: actions/setup-java@v2
+        with:
+          java-version: "11"
+
+      - run: apt-get update && apt-get install -y maven
+      - run: mvn clean install
+      - run: mvn package
+      - run: mvn compile
+      - run: mvn spring-boot-run
