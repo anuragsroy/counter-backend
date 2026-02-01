@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           java-version: "11"
+          distribution: "openJDK"
 
       - run: apt-get update && apt-get install -y maven
       - run: mvn clean install
