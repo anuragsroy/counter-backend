@@ -16,10 +16,11 @@ jobs:
       - uses: actions/checkout@v2
 
       
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v4
         with:
-          java-version: "11"
-          distribution: "openJDK"
+          distribution: "temurin"
+          java-version: "17"
+          
 
       - run: apt-get update && apt-get install -y maven
       - run: mvn clean install
